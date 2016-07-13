@@ -81,7 +81,8 @@
 
     <scm>
         <connection>scm:git:https://github.com/UnionVMS/UVMS-RulesModule-MODEL.git</connection>
-    </scm>
+      <tag>HEAD</tag>
+  </scm>
 
     <profiles>
         <profile>
