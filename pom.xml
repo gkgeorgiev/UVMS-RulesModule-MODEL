@@ -22,6 +22,7 @@
         <powermock.version>1.6.2</powermock.version>
         <project.scm.id>github</project.scm.id>
         <maven-release-plugin>2.5.3</maven-release-plugin>
+        <binding.xml>binding-date.xml</binding.xml>
     </properties>
 
     <dependencies>
@@ -124,7 +125,7 @@
                                             
                                             <wsdl>${basedir}/src/main/resources/contract/${wsdl.contract.name}.wsdl</wsdl>
                                             <bindingFiles>
-                                                <bindingFile>${basedir}/src/main/resources/binding.xml</bindingFile>
+                                                <bindingFile>${basedir}/src/main/resources/${binding.xml}</bindingFile>
                                             </bindingFiles>
                                         </wsdlOption>
                                     </wsdlOptions>
@@ -143,7 +144,7 @@
                                             
                                             <wsdl>${basedir}/src/main/resources/contract/${wsdl.source.name}.wsdl</wsdl>
                                             <bindingFiles>
-                                                <bindingFile>${basedir}/src/main/resources/binding.xml</bindingFile>
+                                                <bindingFile>${basedir}/src/main/resources/${binding.xml}</bindingFile>
                                             </bindingFiles>
                                         </wsdlOption>
                                     </wsdlOptions>
