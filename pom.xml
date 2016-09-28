@@ -23,6 +23,7 @@
         <project.scm.id>github</project.scm.id>
         <maven-release-plugin>2.5.3</maven-release-plugin>
         <binding.xml>binding-date.xml</binding.xml>
+        <envClassifier>date</envClassifier>
     </properties>
 
     <dependencies>
