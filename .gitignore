@@ -1,3 +1,5 @@
 /src/main/java/eu/europa/ec/fisheries/schema
 target
 *.iml
+target/*
+**/schema/rules

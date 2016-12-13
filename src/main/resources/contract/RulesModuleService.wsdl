@@ -57,7 +57,33 @@
                 </xsd:complexType>
             </xsd:element>
 
-            <xsd:complexType name="RulesBaseRequest" abstract="true">
+			<xsd:element name="SetFLUXMDRSyncMessageRulesRequest">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="module:RulesBaseRequest">
+							<xsd:sequence>
+								<xsd:element name="type" type="exchange:PluginType"/>
+								<xsd:element name="request" type="xsd:string"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="SetFLUXMDRSyncMessageRulesResponse">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="module:RulesBaseRequest">
+							<xsd:sequence>
+								<xsd:element name="type" type="exchange:PluginType"/>
+								<xsd:element name="request" type="xsd:string"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:complexType name="RulesBaseRequest" abstract="true">
                 <xsd:sequence>
                     <xsd:element name="method" type="module:RulesModuleMethod"/>
                     <xsd:element name="username" type="xsd:string"/>
@@ -672,3 +698,4 @@
     </service>
 
 </definitions>
+

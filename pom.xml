@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -60,33 +61,66 @@
         </dependency>
     </dependencies>
 
-    <repositories>
-        <repository>
-            <id>focus-repo</id>
-            <name>Focus nexus repository</name>
-            <url>http://nexus.focus.fish/</url>
-        </repository>
-    </repositories>
-
-    <distributionManagement> 
-        <repository>
-            <id>focus-releases</id>
-            <name>UnionVms Repository</name>
-            <url>http://nexus.focus.fish/nexus/content/repositories/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>focus-snapshots</id>
-            <name>UnionVms Snapshot Repository</name>
-            <url>http://nexus.focus.fish/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
 
     <scm>
-        <connection>scm:git:https://github.com/UnionVMS/UVMS-RulesModule-MODEL.git</connection>
-      <tag>HEAD</tag>
-  </scm>
+        <connection>${scm.connection}</connection>
+        <tag>HEAD</tag>
+    </scm>
 
     <profiles>
+        <profile>
+            <id>github</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <repositories>
+                <repository>
+                    <id>focus-repo</id>
+                    <name>Focus nexus repository</name>
+                    <url>http://nexus.focus.fish/</url>
+                </repository>
+            </repositories>
+
+            <distributionManagement>
+                <repository>
+                    <id>focus-releases</id>
+                    <name>UnionVms Repository</name>
+                    <url>http://nexus.focus.fish/nexus/content/repositories/releases/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>focus-snapshots</id>
+                    <name>UnionVms Snapshot Repository</name>
+                    <url>http://nexus.focus.fish/nexus/content/repositories/snapshots/</url>
+                </snapshotRepository>
+            </distributionManagement>
+
+            <properties>
+                <scm.connection>scm:git:https://github.com/UnionVMS/UVMS-USM4UVMSLibrary.git</scm.connection>
+            </properties>
+        </profile>
+        <profile>
+            <id>dg-mare</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <distributionManagement>
+                <repository>
+                    <id>digit-releases</id>
+                    <name>DG DIGIT Repository</name>
+                    <url>https://webgate.ec.europa.eu/CITnet/nexus/content/repositories/mare/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>digit-snapshots</id>
+                    <name>DG DIGIT Snapshot Repository</name>
+                    <url>https://webgate.ec.europa.eu/CITnet/nexus/content/repositories/mare-snapshots/</url>
+                </snapshotRepository>
+            </distributionManagement>
+
+            <properties>
+                <scm.connection>scm:git:https://emserveje@webgate.ec.europa.eu/CITnet/stash/scm/unionvms/uvms-usm4uvmslibrary.git</scm.connection>
+            </properties>
+        </profile>
+
         <profile>
             <id>xmlgregoriancalendar</id>
             <properties>
@@ -130,7 +164,7 @@
                                     <sourceRoot>${basedir}/src/main/java/</sourceRoot>
                                     <wsdlOptions>
                                         <wsdlOption>
-                                            
+
                                             <wsdl>${basedir}/src/main/resources/contract/${wsdl.contract.name}.wsdl</wsdl>
                                             <bindingFiles>
                                                 <bindingFile>${basedir}/src/main/resources/${binding.xml}</bindingFile>
@@ -149,7 +183,7 @@
                                     <sourceRoot>${basedir}/src/main/java/</sourceRoot>
                                     <wsdlOptions>
                                         <wsdlOption>
-                                            
+
                                             <wsdl>${basedir}/src/main/resources/contract/${wsdl.source.name}.wsdl</wsdl>
                                             <bindingFiles>
                                                 <bindingFile>${basedir}/src/main/resources/${binding.xml}</bindingFile>
@@ -207,4 +241,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
