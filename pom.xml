@@ -24,6 +24,8 @@
         <maven-release-plugin>2.5.3</maven-release-plugin>
         <binding.xml>binding-date.xml</binding.xml>
         <envClassifier>date</envClassifier>
+
+        <scm.connection>scm:git:https://github.com/UnionVMS/UVMS-RulesModule-MODEL.git</scm.connection>
     </properties>
 
     <dependencies>
@@ -60,6 +62,26 @@
         </dependency>
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>focus-repo</id>
+            <name>Focus nexus repository</name>
+            <url>http://nexus.focus.fish/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>focus-releases</id>
+            <name>UnionVms Repository</name>
+            <url>http://nexus.focus.fish/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>focus-snapshots</id>
+            <name>UnionVms Snapshot Repository</name>
+            <url>http://nexus.focus.fish/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <scm>
         <connection>${scm.connection}</connection>
@@ -68,40 +90,7 @@
 
     <profiles>
         <profile>
-            <id>github</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <repositories>
-                <repository>
-                    <id>focus-repo</id>
-                    <name>Focus nexus repository</name>
-                    <url>http://nexus.focus.fish/</url>
-                </repository>
-            </repositories>
-
-            <distributionManagement>
-                <repository>
-                    <id>focus-releases</id>
-                    <name>UnionVms Repository</name>
-                    <url>http://nexus.focus.fish/nexus/content/repositories/releases/</url>
-                </repository>
-                <snapshotRepository>
-                    <id>focus-snapshots</id>
-                    <name>UnionVms Snapshot Repository</name>
-                    <url>http://nexus.focus.fish/nexus/content/repositories/snapshots/</url>
-                </snapshotRepository>
-            </distributionManagement>
-
-            <properties>
-                <scm.connection>scm:git:https://github.com/UnionVMS/UVMS-RulesModule-MODEL.git</scm.connection>
-            </properties>
-        </profile>
-        <profile>
             <id>dg-mare</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
             <distributionManagement>
                 <repository>
                     <id>digit-releases</id>
