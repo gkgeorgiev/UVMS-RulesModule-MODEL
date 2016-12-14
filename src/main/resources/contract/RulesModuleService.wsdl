@@ -40,7 +40,8 @@
                     <xsd:enumeration value="GET_TICKETS_AND_RULES_BY_MOVEMENTS"/>
 					
 					<xsd:enumeration value="SET_FLUX_FA_REPORT"/>
-
+                    <xsd:enumeration value="SET_FLUX_MDR_SYNC_REQUEST"/>
+                    <xsd:enumeration value="GET_FLUX_MDR_SYNC_RESPONSE"/>
                 </xsd:restriction>
             </xsd:simpleType>
 			
